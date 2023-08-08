@@ -2,7 +2,7 @@
 import homePage from "../../support/pageObjects/automation-test-store/homePage"
 import haircarePage from "../../support/pageObjects/automation-test-store/haircarePage"
 
-describe('Add multiple items to basked', () => {    
+describe('Add multiple items to basket', () => {    
     const home = new homePage()
     const haircare = new haircarePage()
     before(() => {
