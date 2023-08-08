@@ -1,0 +1,11 @@
+{
+  "name": "Rahul",
+  "email": "rahul.kamat01@gmail.com",
+  "password": "Pass123",
+  "icecream": "Yes",
+  "employment": "Employed",
+  "birthday": "1987-08-31",
+  "gender": "Male",
+  "productName": ["Nokia Edge","Blackberry"],
+  "deliveryCountry": "India"
+}

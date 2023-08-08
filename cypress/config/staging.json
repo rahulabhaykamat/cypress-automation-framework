@@ -1,0 +1,6 @@
+{
+    "baseUrl":"https://www.automationteststore.com/",
+    "env":{
+        "first_name":"John"
+    }
+}
