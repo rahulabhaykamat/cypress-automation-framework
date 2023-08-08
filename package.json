@@ -10,13 +10,15 @@
     "triggerAllTests-headed-chrome": "npx cypress run --headed --browser chrome",
     "triggerAllTests-dashboard": "npx cypress run --record --key 2b7d122d-f9a9-41c2-bfdb-9be2305e8b1d",
     "triggerAllTests-webdriveruni": "npx cypress run --spec cypress/e2e/webdriver-uni/*",
+    "triggerAllTests-webdriveruni-dashboard": "npx cypress run --spec cypress/e2e/webdriver-uni/* --record --key 2b7d122d-f9a9-41c2-bfdb-9be2305e8b1d",
     "junit-merge": "npx junit-merge -d cypress/results/junit -o cypress/results/junit/results.xml",
     "delete-junit-report": "rm -rf cypress/results/junit/results.xml",
     "delete-results": "rm -rf cypress/results/* || true",
     "merge-mochawesome": "npx mochawesome-merge cypress/results/mochawesome/*.json > mochawesome.json && npx marge mochawesome.json",
     "delete-mochawesome-report": "rm -rf mochawesome-report/* || true",
     "cypress-regression-pack": "npm run delete-mochawesome-report && npm run delete-results && npm run triggerAllTests-headless && npm run merge-mochawesome && npm run junit-merge",
-    "triggerAllTests-staging": "npx cypress run --env configFile=staging"
+    "triggerAllTests-staging": "npx cypress run --env configFile=staging",
+    "cypress-multi-browser": "npm run triggerAllTests-webdriveruni -- --browser electron --headed & npm run triggerAllTests-webdriveruni -- -- browser chrome --headed"
   },
   "cypress-cucumber-preprocessor": {
     "json": {
