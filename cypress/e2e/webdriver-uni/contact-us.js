@@ -15,7 +15,7 @@ describe('Test Contact Us form via WebdriverUni',()=>{
         home.visitHomePage()
         // cy.visit('/')
         home.clickContactUsButton()
-        cy.pause()
+        // cy.pause() //this will pause the execution at this point
     });
 
     it('Should be able to submit a successful submission via Contact Us form',()=>{
