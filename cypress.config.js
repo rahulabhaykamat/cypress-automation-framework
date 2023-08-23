@@ -40,6 +40,7 @@ module.exports = defineConfig({
       return getConfigurationByFile(file)//custom config file setting ends here<<<<
     },
     specPattern: "cypress/e2e/**/*.{js,jsx,ts,tsx,feature}",
+    // excludeSpecPattern:"cypress/e2/other/*.js",
     baseUrl:"http://www.webdriveruniversity.com",
     //this config change will override default config value on project level
     defaultCommandTimeout: 6000,
