@@ -5,6 +5,8 @@ const browserify = require("@badeball/cypress-cucumber-preprocessor/browserify")
 //>>>>custom config file setting starts here
 const fs = require('fs-extra');
 const path = require('path');
+//for cucumber
+const cucumber = require('cypress-cucumber-preprocessor').default;
 
 function getConfigurationByFile(file) {
   const pathToConfigFile = path.resolve('cypress\\config', `${file}.json`);
@@ -35,6 +37,8 @@ module.exports = defineConfig({
     //any plugin you install and have it on package.json needs to be linked here,
     //so that the plugins are loaded before the execution starts
     setupNodeEvents(on,config){
+      //for cucumber
+      on('file:preprocessor',cucumber())
       //>>>>custom config file setting starts here
       const file = config.env.configFile || ''
       return getConfigurationByFile(file)//custom config file setting ends here<<<<
@@ -68,4 +72,6 @@ module.exports = defineConfig({
       openMode: 0,
       },
   },
+  //for Cypress Studio (Record and play)
+  experimentalStudio:true
 });

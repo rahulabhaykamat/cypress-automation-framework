@@ -21,6 +21,8 @@
     "cypress-multi-browser": "npm run triggerAllTests-webdriveruni -- --browser electron --headed & npm run triggerAllTests-webdriveruni -- -- browser chrome --headed"
   },
   "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions":false,
+    "stepDefinitions":"cypress/support/stepDefinitions",
     "json": {
       "enabled": true,
       "output": "./cypress/cucumberReports/results.json"
@@ -31,6 +33,7 @@
   "devDependencies": {
     "@cypress/xpath": "^2.0.3",
     "cypress": "^12.6.0",
+    "cypress-cucumber-preprocessor": "^4.3.1",
     "cypress-iframe": "^1.0.1",
     "cypress-multi-reporters": "^1.6.3",
     "mocha-junit-reporter": "^2.2.1",
